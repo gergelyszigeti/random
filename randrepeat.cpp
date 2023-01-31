@@ -7,7 +7,7 @@ int main()
     MyRand myrand(init_state);
     int count = 0;
     std::cout << "Repeated at indices:\n";
-    for (unsigned int i = 0; i != static_cast<unsigned int>(int{-1}); i++) {
+    for (unsigned int i = 1; i; i++) {
         if (myrand() == init_state) { std::cout << i << "\n"; count++; }
     }
     std::cout << "\nRepeated " << count << " time"
