@@ -18,7 +18,7 @@ int main()
    constexpr int lot_count = 80;
    auto lot = std::array<int, lot_count + 1>();
    
-   // create and write out a histogram of billions of random throws with lot_count resolution 
+   // create and write out a histogram of millions of random throws with lot_count resolution
    for (int i = 0; i < dice_throw_count; ++i) {
        ++lot[static_cast<int>(rand_uniform()*lot_count)];
    }
@@ -29,11 +29,11 @@ int main()
    // show bars
    std::cout << "\nBars:\n";
    constexpr int barheight = 10;
-   auto max_bar = *std::max_element(std::begin(lot), std::end(lot));
+   float max_bar = *std::max_element(std::begin(lot), std::end(lot));
    float div = (max_bar+1) / (barheight+1);
    int y = barheight; while (y --> 0) {
        for(int x = 0; x < lot_count; x++) {
-           std::cout << (lot[x] >= static_cast<int>(y * div) ? "O" : " ");
+           std::cout << (lot[x] > static_cast<int>(y * div) ? "O" : " ");
        }
        std::cout << "\n";
    }
