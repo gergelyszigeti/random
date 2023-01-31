@@ -7,6 +7,7 @@ See `myrand.h` for deatils.
 The two programs are:
 
 `randtest`: test for uniformity, how uniform the distribution is
+
 `randrepeat`: how often the generated "random" sequence is repeated
 
 
